@@ -1,0 +1,1 @@
+export const CLOUDINARY_ID = 'https://res.cloudinary.com/dzv8yh4ib/image/upload/v1725349897/'
