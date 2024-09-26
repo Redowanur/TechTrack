@@ -1,26 +1,26 @@
 export const feautured_categories = [
-    { name: 'Laptop', image: 'laptop_fcmwog' },
-    { name: 'Smart Phone', image: 'phone_i09qsh' },
-    { name: 'Desktop', image: 'computer_lcu07s' },
-    { name: 'CPU', image: 'cpu_txe9tm' },
-    { name: 'Motherboard', image: 'motherboard_ituegd' },
-    { name: 'SSD', image: 'ssd_wwk5js' },
-    { name: 'Graphics Card', image: 'graphic-card_br1syj' },
-    { name: 'Keyboard', image: 'keyboard_bqw6qi' },
-    { name: 'Ram', image: 'ram_hovzvs' },
-    { name: 'Router', image: 'wireless-router_vfjhdx' },
-    { name: 'Monitor', image: 'lcd_q2ilmv' },
-    { name: 'Gaming Chair', image: 'gaming-chair_cftamh' },
-    { name: 'Cooling fan', image: 'cooling-fan_h15w9s' },
-    { name: 'Case', image: 'case_yb8xdm' },
+    { name: 'Laptop', image: 'laptop_fcmwog', link: '/laptop' },
+    { name: 'Smart Phone', image: 'phone_i09qsh', link: '/phone' },
+    { name: 'Desktop', image: 'computer_lcu07s', link: '/desktop' },
+    { name: 'CPU', image: 'cpu_txe9tm', link: '/pc-components/processor' },
+    { name: 'Motherboard', image: 'motherboard_ituegd', link: '/pc-components/motherboard' },
+    { name: 'SSD', image: 'ssd_wwk5js', link: '/pc-components/ssd' },
+    { name: 'Graphics Card', image: 'graphic-card_br1syj', link: '/pc-components/graphics-card' },
+    { name: 'Keyboard', image: 'keyboard_bqw6qi', link: '/accessories/keyboard' },
+    { name: 'Ram', image: 'ram_hovzvs', link: '/pc-components/ram-desktop' },
+    { name: 'Router', image: 'wireless-router_vfjhdx', link: '/networking' },
+    { name: 'Monitor', image: 'lcd_q2ilmv', link: '/monitor' },
+    { name: 'Gaming Chair', image: 'gaming-chair_cftamh', link: '/gaming' },
+    { name: 'Cooling fan', image: 'cooling-fan_h15w9s', link: '/pc-components/cpu-cooler' },
+    { name: 'Case', image: 'case_yb8xdm', link: '/pc-components/casing' },
 ]
 
 export const menus = {
     'desktop': [
-        {link: '/desktop', label: 'Desktop'}
+        { link: '/desktop', label: 'Desktop' }
     ],
     'laptop': [
-        {link: '/laptop', label: 'Laptop'}
+        { link: '/laptop', label: 'Laptop' }
     ],
     'pc-components': [
         { parent: 'PC Components', link: '/pc-components/processor', label: 'Processor' },
@@ -39,16 +39,16 @@ export const menus = {
         { parent: 'PC Components', link: '/pc-components/casing-cooler', label: 'Casing Cooler' },
     ],
     'monitor': [
-        {link: '/monitor', label: 'Monitor'}
+        { link: '/monitor', label: 'Monitor' }
     ],
     'phone': [
-        {link: '/phone', label: 'Phone'}
+        { link: '/phone', label: 'Phone' }
     ],
     'tablet': [
-        {link: '/tablet', label: 'Tablet'}
+        { link: '/tablet', label: 'Tablet' }
     ],
     'networking': [
-        {link: '/networking', label: 'Networking'}
+        { link: '/networking', label: 'Networking' }
     ],
     'accessories': [
         { parent: 'Accessories', link: '/accessories/keyboard', label: 'Keyboard' },
@@ -74,16 +74,16 @@ export const menus = {
         { parent: 'Office Equipments', link: '/office/scanner', label: 'Scanner' },
     ],
     'cameras': [
-        {link: '/cameras', label: 'Camera'}
+        { link: '/cameras', label: 'Camera' }
     ],
     'servers': [
-        {link: '/servers', label: 'Server'}
+        { link: '/servers', label: 'Server' }
     ],
     'gaming': [
-        {link: '/gaming', label: 'Gaming'}
+        { link: '/gaming', label: 'Gaming' }
     ],
     'ips-ups': [
-        {link: '/ips-ups', label: 'IPS & UPS'}
+        { link: '/ips-ups', label: 'IPS & UPS' }
     ],
 }
 
@@ -129,13 +129,6 @@ export const popularProducts = [
         image: 'https://www.startech.com.bd/image/cache/catalog/laptop/lenovo/legion-slim-5-16ahp9/legion-slim-5-16ahp9-01-500x500.webp',
         price: '245,000',
         type: 'laptop'
-    },
-    {
-        id: 6,
-        name: 'AMD RYZEN 7 7800X3D MSI B650M Motherboard 32GB Ram 512GB SSD Desktop PC',
-        image: 'https://www.techlandbd.com/image/catalog/products_2024/desktop-pc-offers.jpg',
-        price: '160,000',
-        type: 'desktop'
     },
     {
         id: 7,

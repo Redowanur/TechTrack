@@ -2,6 +2,7 @@ import React, { useRef } from 'react'
 import { CLOUDINARY_ID } from '../config/config'
 import { ArrowBack, ArrowForward } from '@mui/icons-material'
 import { feautured_categories } from '../api/api'
+import { Link } from 'react-router-dom'
 
 const FeaturedCategory = () => {
     // Reference for the scrollable category container
@@ -42,12 +43,12 @@ const FeaturedCategory = () => {
                 style={{ scrollbarWidth: 'none' }}  // Optional: Hide scrollbar
             >
                 {feautured_categories.map((item, index) => (
-                    <div key={index} className='flex flex-col items-center gap-2 min-w-[120px]'>
+                    <Link to={item.link} key={index} className='flex flex-col items-center gap-2 min-w-[120px]'>
                         <div className='w-20 h-20 rounded-full bg-gray-200 p-3'>
                             <img src={CLOUDINARY_ID + item.image} alt={item.name} />
                         </div>
                         <p className='text-center'>{item.name}</p>
-                    </div>
+                    </Link>
                 ))}
             </div>
         </>

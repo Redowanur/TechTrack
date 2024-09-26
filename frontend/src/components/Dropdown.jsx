@@ -5,27 +5,27 @@ import { menus } from '../api/api'
 
 const MainMenu = ({ setActiveMenu }) => (
     <ul className='flex flex-col'>
-        <li className='flex justify-between hover:bg-emerald-100 px-5 h-8 items-center'>
-            <Link to='/desktop'>Desktop</Link>
-        </li>
-        <li className='flex justify-between hover:bg-emerald-100 px-5 h-8 items-center'>
-            <Link to='/laptop'>Laptop</Link>
-        </li>
+        <Link to='/desktop' className='flex justify-between hover:bg-emerald-100 px-5 h-8 items-center'>
+            Desktop
+        </Link>
+        <Link to='/laptop' className='flex justify-between hover:bg-emerald-100 px-5 h-8 items-center'>
+            Laptop
+        </Link>
         <li className='flex justify-between hover:bg-emerald-100 px-5 h-8 items-center' onClick={() => setActiveMenu('pc-components')}>
             PC Components <ChevronRight />
         </li>
-        <li className='flex justify-between hover:bg-emerald-100 px-5 h-8 items-center'>
-            <Link to='/monitor'>Monitor</Link>
-        </li>
-        <li className='flex justify-between hover:bg-emerald-100 px-5 h-8 items-center'>
-            <Link to='/phone'>Phone</Link>
-        </li>
-        <li className='flex justify-between hover:bg-emerald-100 px-5 h-8 items-center'>
-            <Link to='/tablet'>Tablet</Link>
-        </li>
-        <li className='flex justify-between hover:bg-emerald-100 px-5 h-8 items-center'>
-            <Link to='/networking'>Networking</Link>
-        </li>
+        <Link to='/monitor' className='flex justify-between hover:bg-emerald-100 px-5 h-8 items-center'>
+            Monitor
+        </Link>
+        <Link to='/phone' className='flex justify-between hover:bg-emerald-100 px-5 h-8 items-center'>
+            Phone
+        </Link>
+        <Link to='/tablet' className='flex justify-between hover:bg-emerald-100 px-5 h-8 items-center'>
+            Tablet
+        </Link>
+        <Link to='/networking' className='flex justify-between hover:bg-emerald-100 px-5 h-8 items-center'>
+            Networking
+        </Link>
         <li className='flex justify-between hover:bg-emerald-100 px-5 h-8 items-center' onClick={() => setActiveMenu('accessories')}>
             Accessories <ChevronRight />
         </li>
@@ -35,18 +35,18 @@ const MainMenu = ({ setActiveMenu }) => (
         <li className='flex justify-between hover:bg-emerald-100 px-5 h-8 items-center' onClick={() => setActiveMenu('office')}>
             Office Equipments <ChevronRight />
         </li>
-        <li className='flex justify-between hover:bg-emerald-100 px-5 h-8 items-center'>
-            <Link to='/cameras'>Cameras</Link>
-        </li>
-        <li className='flex justify-between hover:bg-emerald-100 px-5 h-8 items-center'>
-            <Link to='/servers'>Servers</Link>
-        </li>
-        <li className='flex justify-between hover:bg-emerald-100 px-5 h-8 items-center'>
-            <Link to='/gaming'>Gaming</Link>
-        </li>
-        <li className='flex justify-between hover:bg-emerald-100 px-5 h-8 items-center'>
-            <Link to='/ips-ups'>IPS & UPS</Link>
-        </li>
+        <Link to='/cameras' className='flex justify-between hover:bg-emerald-100 px-5 h-8 items-center'>
+            Cameras
+        </Link>
+        <Link to='/servers' className='flex justify-between hover:bg-emerald-100 px-5 h-8 items-center'>
+            Servers
+        </Link>
+        <Link to='/gaming' className='flex justify-between hover:bg-emerald-100 px-5 h-8 items-center'>
+            Gaming
+        </Link>
+        <Link to='/ips-ups' className='flex justify-between hover:bg-emerald-100 px-5 h-8 items-center'>
+            IPS & UPS
+        </Link>
     </ul>
 )
 
@@ -60,11 +60,9 @@ const Submenu = ({ setActiveMenu, items }) => (
         </div>
         <ul className='flex flex-col'>
             {items.map((item, index) => (
-                <li key={index} className='flex justify-between hover:bg-emerald-100 px-5 h-8 items-center'>
-                    <Link to={item.link}>
-                        {item.label}
-                    </Link>
-                </li>
+                <Link to={item.link} key={index} className='flex justify-between hover:bg-emerald-100 px-5 h-8 items-center'>
+                    {item.label}
+                </Link>
             ))}
         </ul>
     </>

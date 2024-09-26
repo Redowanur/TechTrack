@@ -16,9 +16,9 @@ const Header = ({ isNavBarShow, setIsNavBarShow }) => {
             <div className='flex justify-between items-center w-full 2xl:w-[1400px] h-full px-5 2xl:px-0'>
                 <div className='flex items-center'>
                     <div className='lg:hidden mr-5' onClick={() => setIsNavBarShow(!isNavBarShow)}>{isNavBarShow ? <Close /> : <Menu />}</div>
-                    <div className='w-fit flex items-center'>
+                    <Link className='w-fit flex items-center'>
                         <img src={CLOUDINARY_ID + 'logo_cl3lsh'} className='h-10 lg:h-12' />
-                    </div>
+                    </Link>
                 </div>
                 <div className='hidden lg:block ml-6 text-[15px] h-full'>
                     <ul className='flex gap-5 xl:gap-8 h-full'>
