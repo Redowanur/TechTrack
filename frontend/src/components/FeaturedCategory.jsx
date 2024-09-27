@@ -38,7 +38,7 @@ const FeaturedCategory = () => {
             </div>
 
             <div
-                className='flex md:gap-16 overflow-x-hidden scroll-smooth'
+                className='flex md:gap-16 overflow-x-auto scroll-smooth'
                 ref={scrollContainerRef}  // Ref to control scroll
                 style={{ scrollbarWidth: 'none' }}  // Optional: Hide scrollbar
             >
