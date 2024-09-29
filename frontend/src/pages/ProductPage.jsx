@@ -2,15 +2,15 @@ import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { popularProducts } from '../api/api'
 import { Cancel, OpenInNew, Search, Sort } from '@mui/icons-material'
-import { BarChart, Bar, XAxis, CartesianGrid, ResponsiveContainer } from "recharts";
+import { BarChart, Bar, XAxis, CartesianGrid, ResponsiveContainer, LineChart, Line, Tooltip, AreaChart, Area } from "recharts";
 
 const data = [
-    { name: "Jan", uv: 4000 },
-    { name: "Feb", uv: 3000 },
-    { name: "Mar", uv: 2000 },
-    { name: "Apr", uv: 2780 },
-    { name: "May", uv: 1890 },
-    { name: "Jun", uv: 2390 },
+    { name: "Jan", price: 4000 },
+    { name: "Feb", price: 3700 },
+    { name: "Mar", price: 3500 },
+    { name: "Apr", price: 3780 },
+    { name: "May", price: 2890 },
+    { name: "Jun", price: 3390 },
 ];
 
 const Shop = ({ shop, price }) => {
@@ -23,7 +23,7 @@ const Shop = ({ shop, price }) => {
                     <OpenInNew fontSize='' />
                 </a>
             </div>
-            <div>Price: {price}৳</div>
+            <div>{price} Taka</div>
         </div>
     );
 };
@@ -91,7 +91,8 @@ const ProductPage = () => {
         { label: 'Today', value: 0 },
         { label: 'This week', value: 1 },
         { label: 'This month', value: 2 },
-        { label: 'Last 6 months', value: 3 }
+        { label: 'Last 6 months', value: 3 },
+        { label: 'Last 1 year', value: 4 }
     ]
 
     return (
@@ -99,7 +100,7 @@ const ProductPage = () => {
             <div className='h-full w-96 sm:w-[600px] md:w-[710px] lg:w-[1000px] xl:w-[1200px] 2xl:w-[1500px] mx-auto'>
                 {productData !== undefined &&
                     <div className='w-96 md:w-[500px] mx-auto lg:flex lg:w-full lg:justify-center lg:gap-10 pt-10'>
-                        <div className='lg:w-1/2'>
+                        <div className='lg:w-[60%]'>
                             <div className='flex justify-center'>
                                 <img src={productData.image} />
                             </div>
@@ -115,16 +116,18 @@ const ProductPage = () => {
                                     {options.map(option => <option value={option.value}>{option.label}</option>)}
                                 </select>
                             </div>
-                            <ResponsiveContainer height={400} className='mt-5'>
-                                <BarChart data={data} margin={{ top: 20 }}>
+                            <ResponsiveContainer height={300} className='mt-5'>
+                                <AreaChart data={data} margin={{ top: 20, right: 20, left: 20 }}>
                                     <CartesianGrid strokeDasharray="3 3" stroke="#f5f5f5" />
-                                    <XAxis dataKey="name" tick={{ fill: "#8884d8" }} />
-                                    <Bar dataKey="uv" fill="#8884d8" radius={[10, 10, 10, 10]} label={{ position: "top", fill: "#8884d8", fontSize: 14 }} />
-                                </BarChart>
+                                    <XAxis dataKey="name" tick={{ fill: "#000000" }} />
+                                    <Tooltip/>
+                                    <Area type="monotone" dataKey="price" stroke="#a7f3d0" fill='#a7f3d0' strokeWidth={2} dot={{ r: 5 }} label={{ position: "top", fill: "#000000", fontSize: 14 }} />
+                                </AreaChart>
                             </ResponsiveContainer>
+
                             <p className='text-center mt-4 text-lg lg:mb-10'>Last 6 months prices in StarTech</p>
                         </div>
-                        <div className='lg:w-1/2 py-10'>
+                        <div className='lg:w-[40%] py-10'>
                             <button className='bg-emerald-200 hover:bg-emerald-300 rounded-md px-4 py-2 shadow-sm'><Sort /> Sort by price</button>
                             <p className='mt-5 ml-1 text-gray-500 text-sm'>N:B: Select a shop to see the price history.</p>
                             <div className="mt-6 rounded-md bg-white shadow-all">
