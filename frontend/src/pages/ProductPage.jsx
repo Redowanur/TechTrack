@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { popularProducts } from '../api/api'
 import { Cancel, OpenInNew, Search, Sort } from '@mui/icons-material'
-import { BarChart, Bar, XAxis, CartesianGrid, ResponsiveContainer, LineChart, Line, Tooltip, AreaChart, Area } from "recharts";
+import { XAxis, CartesianGrid, ResponsiveContainer, Tooltip, AreaChart, Area } from "recharts";
 
 const data = [
     { name: "Jan", price: 4000 },
